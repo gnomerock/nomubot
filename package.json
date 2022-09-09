@@ -8,6 +8,8 @@
     "discord.js": "^14.3.0"
   },
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "deploy-dev": "deploy-commands.js",
+    "deploy-prod": "deploy-commands.js"
   }
 }
