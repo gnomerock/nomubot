@@ -8,6 +8,8 @@ https://discord.com/api/oauth2/authorize?client_id=1017847194113556631&permissio
 ### config.json
 ```
 {
+  "clientId": "application id",
+  "guildId": "discord server id",
   "token": "token here!"
 }
 ```
