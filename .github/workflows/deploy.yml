@@ -22,4 +22,4 @@ jobs:
       run: ssh-keyscan -t rsa your-dokku-server-ip >> ~/.ssh/known_hosts
 
     - name: Deploy to Dokku
-      run: git remote add dokku dokku@your-dokku-server-ip:your-app-name && git push dokku HEAD:refs/heads/main
+      run: git remote add dokku dokku@${{ secrets.DOKKU_SERVER_IP }}:nomubot && git push dokku HEAD:refs/heads/main
