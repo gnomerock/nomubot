@@ -1,0 +1,25 @@
+name: Deploy to Dokku
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to trigger the deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up SSH agent
+      uses: webfactory/ssh-agent@v0.5.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add SSH known hosts
+      run: ssh-keyscan -t rsa your-dokku-server-ip >> ~/.ssh/known_hosts
+
+    - name: Deploy to Dokku
+      run: git remote add dokku dokku@${{ secrets.DOKKU_SERVER_IP }}:nomubot && git push dokku HEAD:refs/heads/main
