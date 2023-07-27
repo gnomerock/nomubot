@@ -48,8 +48,6 @@ module.exports = {
 
       }else{
 
-        console.log(`[+] ${interaction.user.tag} is getting ${interaction.options.get('raid')} guide.`)
-
         await interaction.reply({
           content: `[+] ${interaction.user.tag} is getting ${interaction.options.get('raid').value} guide.`,
           ephemeral: true
