@@ -10,6 +10,7 @@
     "express": "^4.18.2"
   },
   "scripts": {
+    "build": "node deploy-commands-prod.js",
     "dev": "nodemon main.js",
     "deploy-dev": "node deploy-commands-dev.js",
     "deploy-prod": "node deploy-commands-prod.js",
