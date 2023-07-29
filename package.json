@@ -14,7 +14,7 @@
     "dev": "nodemon main.js",
     "deploy-dev": "node deploy-commands-dev.js",
     "deploy-prod": "node deploy-commands-prod.js",
-    "start": "node main.js"
+    "start": "node deploy-commands-prod.js && node main.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
